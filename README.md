@@ -99,22 +99,7 @@ The Wi-Fi and cloud routines are implemented in ESP_01_WIF_MODULE.c:
 4. Open a TCP connection to api.thingspeak.com on port 80.
 5. Build and send an HTTP GET request containing sensor fields.
 6. Close the TCP connection.
-The current source formats the ThingSpeak request with fields 1 through
-8, but supplies values for only six fields in the sprintf() call. This
-must be corrected before relying on the cloud update data. The current
-code also does not parse the ESP-01 response to confirm that ThingSpeak
-accepted an update.
-Protect your credentials
-The supplied header.h contains Wi-Fi credentials and a ThingSpeak
-Write API key. These values are not reproduced in this README.
 
-Before making this repository public, replace any exposed Wi-Fi
-password and regenerate the ThingSpeak Write API key if it has been
-published. Avoid committing real credentials to source control. Store
-them in a local configuration file that is excluded from Git, or use
-placeholders in the public source.
-Repository Structure
-.
 ├── ESP_01_WIF_MODULE.c   # ESP-01 AT commands and ThingSpeak HTTP request
 ├── PUMP_ON_OFF.c         # Pump output control
 ├── adc.c                 # ADC initialization and conversion
@@ -134,10 +119,6 @@ Repository Structure
 ├── rtc.c                 # RTC read/write and time routines
 ├── uart0.c               # UART0 driver
 └── uart1.c               # UART1 driver
-Build and Hardware Setup
-The supplied repository contains C source and header files. It does not
-include a complete Keil project file, startup code, linker configuration
-or every peripheral driver needed for a complete build.
 
 To prepare the project in Keil µVision:
 1. Create a project for the LPC2129 device.
