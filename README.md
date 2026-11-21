@@ -100,26 +100,6 @@ The Wi-Fi and cloud routines are implemented in ESP_01_WIF_MODULE.c:
 5. Build and send an HTTP GET request containing sensor fields.
 6. Close the TCP connection.
 
-├── ESP_01_WIF_MODULE.c   # ESP-01 AT commands and ThingSpeak HTTP request
-├── PUMP_ON_OFF.c         # Pump output control
-├── adc.c                 # ADC initialization and conversion
-├── adc_sensors.c         # Soil moisture, water level and LDR processing
-├── buzzer.c              # Buzzer output control
-├── can_functions.c       # CAN initialization, transmit and receive routines
-├── delay.c               # Timer-based delay routines
-├── dth22.c               # DHT22 temperature and humidity routine
-├── flame.c               # Flame sensor external interrupt
-├── header.h              # Header declarations, pin definitions and configuration
-├── lcd_driver.c          # LCD driver source; not used by main.c
-├── led.c                 # LED output routines
-├── main.c                # Main initialization and application loop
-├── pir.c                 # PIR sensor external interrupt
-├── print.c               # UART status-printing routines
-├── rain.c                # Rain sensor external interrupt
-├── rtc.c                 # RTC read/write and time routines
-├── uart0.c               # UART0 driver
-└── uart1.c               # UART1 driver
-
 To prepare the project in Keil µVision:
 1. Create a project for the LPC2129 device.
 2. Add the required source files and the correct LPC2129 startup/device
